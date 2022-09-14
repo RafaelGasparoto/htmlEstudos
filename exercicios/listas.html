@@ -1,0 +1,55 @@
+<h1>Listas</h1>
+
+<h2>Items</h2>
+<ol>
+  <li>Computador</li>
+  <li>Casa</li>
+  <li>Carro</li>
+</ol>
+
+<ul>
+  <li>Computador</li>
+  <li>Casa</li>
+  <li>Carro</li>
+</ul>
+
+<dl>
+  <dt>Tecnologia</dt>
+    <dd>Computador</dd>
+  <dt>Veiculo</dt>
+    <dd>Carro</dd>
+</dl>
+
+<ul class="tree">
+  <li>
+    <span wm-folder>Pasta 1</span>
+    <ul>
+      <li>File 1</li>
+      <li>File 2</li>
+      <li>File 3</li>
+    </ul>
+  </li>
+  <li>
+    <span wm-folder>Pasta 2</span>
+    <ul>
+      <li>File 5</li>
+      <li>File 5</li>
+      <li>File 5</li>
+    </ul>
+  </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+  document.querySelectorAll('[wm-folder]').forEach(
+    folder => {
+      folder.onclick = function(e){
+        const conteudo = folder.nextElementSibling
+        const d = conteudo.style.display 
+        conteudo.style.display = d === 'none' ? 'block' : 'none'
+        console.log('pegou')
+      }
+    }
+  )
+</script>
